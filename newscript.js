@@ -1,13 +1,13 @@
-"status":
-	"code": "200",
-	"name": "ok",
-	"description": "success",
-	"ReturnedIn" = "370ms"
-	
+var status = [
+	    code: "200",
+	    name: "ok",
+	    description: "success",
+	    ReturnedIn: "370ms"
+]
 const geonames = [
     {	
 		toponymName: "Abruzzo",
-        name: "Abruzzo",
+        areaname: "Abruzzo",
         lat: "42.25",
         lng: "13.75",
         geonameId: "3183560",
@@ -18,7 +18,7 @@ const geonames = [
 	},
     {	
 		toponymName: "Regione Autonoma Valle d'Aosta",
-        name: "Aosta Valley",
+        areaname: "Aosta Valley",
         lat: "45.75",
         lng: "7.25",
         geonameId: "3164857",
@@ -29,7 +29,7 @@ const geonames = [
 	},
 	{
     	toponymName: "Puglia",
-    	name: "Apulia",
+    	areaname: "Apulia",
     	lat: "41.00164",
     	lng: "16.73378",
     	geonameId: "3169778",
@@ -40,7 +40,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Basilicata",
-    	name: "Basilicate",
+    	areaname: "Basilicate",
    		lat: "40.5041",
     	lng: "16.11396",
     	geonameId: "3182306",
@@ -51,7 +51,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Calabria",
-		name: "Calabria",
+		areaname: "Calabria",
 		lat: "39",
 		lng: "16.5",
 		geonameId: "2525468",
@@ -62,7 +62,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Campania",
-		name: "Campania",
+		areaname: "Campania",
 		lat: "40.91056",
 		lng: "14.92053",
 		geonameId: "3181042",
@@ -73,7 +73,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Emilia-Romagna",
-		name: "Emilia-Romagna",
+		areaname: "Emilia-Romagna",
 		lat: "44.5444",
 		lng: "10.98361",
 		geonameId: "3177401",
@@ -84,7 +84,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Friuli Venezia Giulia",
-		name: "Friuli Venezia Giulia",
+		areaname: "Friuli Venezia Giulia",
 		lat: "46",
 		lng: "13",
 		geonameId: "3176525",
@@ -95,7 +95,7 @@ const geonames = [
 	},
 	{	
 		toponymName: "Lazio",
-		name: "Lazio",
+		areaname: "Lazio",
 		lat: "42.07762",
 		lng: "12.77878",
 		geonameId: "3174976",
@@ -106,7 +106,7 @@ const geonames = [
 	},
 	{	
 		toponymName: "Liguria",
-		name: "Liguria",
+		areaname: "Liguria",
 		lat: "44.5",
 		lng: "8.83333",
 		geonameId: "3174725",
@@ -117,7 +117,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Lombardia",
-		name: "Lombardy",
+		areaname: "Lombardy",
 		lat: "45.66667",
 		lng: "9.5",
 		geonameId: "3174618",
@@ -128,7 +128,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Molise",
-		name: "Molise",
+		areaname: "Molise",
 		lat: "41.66667",
 		lng: "14.5",
 		geonameId: "3173222",
@@ -139,7 +139,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Piemonte",
-		name: "Piedmont",
+		areaname: "Piedmont",
 		lat: "45",
 		lng: "8",
 		geonameId: "3170831",
@@ -150,7 +150,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Sardegna",
-		name: "Sardinia",
+		areaname: "Sardinia",
 		lat: "40",
 		lng: "9",
 		geonameId: "2523228",
@@ -161,7 +161,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Sicilia",
-		name: "Sicily",
+		areaname: "Sicily",
 		lat: "37.75",
 		lng: "14.25",
 		geonameId: "2523119",
@@ -172,7 +172,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Marche",
-		name: "The Marches",
+		areaname: "The Marches",
 		lat: "43.5",
 		lng: "13.25",
 		geonameId: "3174004",
@@ -183,7 +183,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Trentino-Alto Adige",
-		name: "Trentino-Alto Adige",
+		areaname: "Trentino-Alto Adige",
 		lat: "46.5",
 		lng: "11.33333"
 		geonameId: "3165244",
@@ -194,7 +194,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Toscana",
-		name: "Tuscany",
+		areaname: "Tuscany",
 		lat: "43.41667",
 		lng: "11",
 		geonameId: "3165361",
@@ -205,7 +205,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Umbria",
-		name: "Umbria",
+		areaname: "Umbria",
 		lat: "43",
 		lng: "12.5",
 		geonameId: "3165048",
@@ -216,7 +216,7 @@ const geonames = [
 	},
 	{
 		toponymName: "Veneto",
-		name: "Veneto",
+		areaname: "Veneto",
 		lat: "45.5",
 		lng: "11.75",
 		geonameId: "3164604",
