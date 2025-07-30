@@ -1,10 +1,10 @@
-var status = [
-	    code: "200",
-	    name: "ok",
-	    description: "success",
-	    ReturnedIn: "370ms"
-]
-const geonames = [
+const status = {
+    code: "200",
+    name: "ok",
+    description: "success",
+    ReturnedIn: "200ms"
+};
+var geonameId = [
     {	
 		toponymName: "Abruzzo",
         areaname: "Abruzzo",
@@ -185,7 +185,7 @@ const geonames = [
 		toponymName: "Trentino-Alto Adige",
 		areaname: "Trentino-Alto Adige",
 		lat: "46.5",
-		lng: "11.33333"
+		lng: "11.33333",
 		geonameId: "3165244",
 		countryCode: "IT",
 		countryName: "Italy",
@@ -226,4 +226,3 @@ const geonames = [
 		fcode: "ADM1"
 	}
 ];
-
