@@ -1,0 +1,175 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>AJAX/PHP/CURL/JSON example</title>
+		<meta name="description" content="AJAX/PHP/CURL/JSON example">
+		<meta name="author" content="Ashton Reynolds">
+	</head>
+
+	<body>
+		<select id="selToponymname">
+			<option value="Abruzzo">Abruzzo</option>
+			<option value="Regione Autonoma Valle d'Aosta">Regione Autonoma Valle d'Aosta</option>
+			<option value="Puglia">Puglia</option>
+			<option value="Basilicata">Basilicata</option>
+			<option value="Calabria">Calabria</option>
+			<option value="Campania">Campania</option>
+			<option value="Emilia-Romagna">Emilia-Romagna</option>			
+			<option value="Friuli Venezia Giulia">Friuli Venezia Giulia</option>
+			<option value="Lazio">Lazio</option>			
+			<option value="Liguria">Liguria</option>
+			<option value="Lombardia">Lombardia</option>
+			<option value="Molise">Molise</option>			
+			<option value="Piemonte">Piemonte</option>
+			<option value="Sardegna">Sardegna</option>
+			<option value="Sicilia">Sicilia</option>
+			<option value="Marche">Marche</option>
+			<option value="Trentino-Alto Adig">Trentino-Alto Adig</option>			
+			<option value="Toscana">Toscana</option>
+			<option value="Umbria">Umbria</option>			
+			<option value="Veneto">Veneto</option>					
+		</select>
+
+		<select id="selName">
+			<option value="Abruzzo">Abruzzo</option>
+			<option value="Aosta Valley">Aosta Valley</option>
+			<option value="Apulia">Apulia</option>
+			<option value="Basilicate">Basilicate</option>
+			<option value="Calabria">Calabria</option>
+			<option value="Campania">Campania</option>
+			<option value="Emilia-Romagna">Emilia-Romagna</option>			
+			<option value="Friuli Venezia Giulia">Friuli Venezia Giulia</option>
+			<option value="Lazio">Lazio</option>			
+			<option value="Liguria">Liguria</option>
+			<option value="Lombardy">Lombardy</option>
+			<option value="Molise">Molise</option>							
+			<option value="Piedmont">Piedmont</option>
+			<option value="Sardinia">Sardinia</option>
+			<option value="Sicily">Sicily</option>
+			<option value="The Marches">The Marches</option>
+			<option value="Trentino-Alto Adig">Trentino-Alto Adig</option>			
+			<option value="Tuscany">Tuscany</option>
+			<option value="Umbria">Umbria</option>			
+			<option value="Veneto">Veneto</option>
+		</select>
+		
+		<select id="selLat">
+			<option value="42.25">42.25</option>
+			<option value="45.75">45.75</option>
+			<option value="41.00164">41.00164</option>
+			<option value="40.5041">40.5041</option>
+			<option value="39">39</option>
+			<option value="40.91056">40.91056</option>
+			<option value="44.5444">44.5444</option>			
+			<option value="46">46</option>
+			<option value="42.07762">42.07762</option>			
+			<option value="44.5">44.5</option>
+			<option value="45.66667">45.66667</option>
+			<option value="41.66667">41.66667</option>							
+			<option value="45">45</option>
+			<option value="40">40</option>
+			<option value="37.75">37.75</option>
+			<option value="43.5">43.5</option>
+			<option value="46.5">46.5</option>			
+			<option value="43.41667">43.41667</option>
+			<option value="12.5">12.5</option>			
+			<option value="45.5">45.5</option>
+		</select>
+		
+		<select id="selLng">
+			<option value="13.75">13.75</option>
+			<option value="7.25">7.25</option>
+			<option value="16.73378">16.73378</option>
+			<option value="16.11396">16.11396</option>
+			<option value="16.5">16.5</option>
+			<option value="14.92053">14.92053</option>
+			<option value="10.98361">10.98361</option>			
+			<option value="13">13</option>
+			<option value="12.77878">12.77878</option>			
+			<option value="8.83333">8.83333</option>
+			<option value="9.5">9.5</option>
+			<option value="14.5">14.5</option>							
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="14.25">14.25</option>
+			<option value="13.25">13.25</option>
+			<option value="11.33333">11.33333</option>			
+			<option value="11">11</option>
+			<option value="12.5">12.5</option>			
+			<option value="11.75">11.75</option>
+		</select>
+
+		<select id="selGeonameid">
+			<option value="3183560">3183560</option>
+			<option value="3164857">3164857</option>
+			<option value="3169778">3169778</option>
+			<option value="3182306">3182306</option>
+			<option value="2525468">2525468</option>
+			<option value="3181042">3181042</option>
+			<option value="3177401">3177401</option>			
+			<option value="3176525">3176525</option>
+			<option value="3174976">3174976</option>			
+			<option value="3174725">3174725</option>
+			<option value="3174618">3174618</option>
+			<option value="3173222">3173222</option>							
+			<option value="3170831">3170831</option>
+			<option value="2523228">2523228</option>
+			<option value="2523119">2523119</option>
+			<option value="3174004">3174004</option>
+			<option value="3165244">3165244</option>			
+			<option value="3165361">3165361</option>
+			<option value="3165048">3165048</option>			
+			<option value="3164604">3164604</option>
+		</select>
+
+		<select id="selCountrycode">
+			<option value="IT">IT</option>
+		</select>	
+		
+		<select id="selCountryname">
+			<option value="Italy">Italy</option>
+		</select>		
+		
+		<select id="selFcl">
+			<option value="A">A</option>
+		</select>		
+		
+		<select id="selFcode">
+			<option value="ADM1">ADM1</option>
+		</select>				
+
+		<button id="btnRun">Run</button>
+		
+		<br><br>
+		
+		<div id="divResults">
+			
+			<table>
+				<tr>
+					<td align="right">
+						Divisions: 
+					</td>
+					<td id="txtDivisions">
+					</td>
+				</tr>
+
+				<tr>
+					<td align="right">
+						PopulatedPlaces: 
+					</td>
+					<td id="txtPopulatedPlaces">
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+		<script type="application/javascript" src="libs/js/script.js"></script>
+
+	</body>
+
+</html>
