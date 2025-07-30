@@ -4,27 +4,25 @@ $('#btnRun').click(function(){
         type: 'POST',
         dataType: 'json',
         data: {
-            toponymName: $('#seltoponymName').val(),
-            areaname: $('#selareaname').val(),
-            lat: $('#sellat').val(),
-            lng: $('#sellng').val(),
-            geonameId: $('#selgeonameId').val(),
-            countryCode: $('#selcountryCode').val(),
-            countryName: $('#selcountryName').val(),
-            fcl: $('#selfcl').val(),
-            fcode: $('#selfcode').val()
+            'geonameId': $('#geonameId').val()
         },
         success: function(result) {
             console.log(result);
             if(result.status.name === "ok") {
-                $('#txtDivisions').html(result['data'][0]['divisions']);
-                $('#txtPopulatedPlaces').html(result['data'][0]['populatesplaces']);
+                $('#txtToponymName').html(result['data'][0]['toponymName']);
+                $('#txtAreaname').html(result['data'][0]['areaname']);
+                $('#txtLat').html(result['data'][0]['lat']);
+                $('#txtLng').html(result['data'][0]['lng'])
+                $('#txtGeonameId').html(result['data'][0]['geonameId']);
+                $('#txtCountryCode').html(result['data'][0]['countryCode']);
+                $('#txtCountryName').html(result['data'][0]['countryName']);
+                $('#txtFcl').html(result['data'][0]['fcl']);
+                $('#txtFcode').html(result['data'][0]['fcode']);
             }
         },
         error: function(jqxhr, status, error) {
             console.error("Error: " + error);
-            $('#txtDivisions').html("Error fetching divisions");
-            $('#txtPopulatedPlaces').html("Error fetching populated places");
+            $('#error').html("Error fetching children data.");
         }
     });
 });
