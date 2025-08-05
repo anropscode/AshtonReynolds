@@ -1,17 +1,17 @@
 <!doctype html>
-
 <html lang="en">
 
 	<head>
 		<meta charset="utf-8">
 		<title>Country Children API</title>
-		<meta name="description" content="AJAX/PHP/CURL/JSON example">
+		<meta name="description" content="Country Children API">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Ashton Reynolds">
 	</head>
 
 	<body>
 
-		<select id="selGeonameid">
+		<select id="geonames_result">
 			<option value="3183560">3183560</option>
 			<option value="3164857">3164857</option>
 			<option value="3169778">3169778</option>
@@ -46,15 +46,15 @@
 					<td align="right">
 						Toponym Name: 
 					</td>
-					<td id="txttoponymName">	
+					<td id="toponymname_result">	
 					</td>
 				</tr>
 
 				<tr>
 					<td align="right">
-						Area Name: 
+						Name: 
 					</td>
-					<td id="txtAreaname">						
+					<td id="name_result">						
 					</td>
 
 				</tr>
@@ -63,7 +63,7 @@
 					<td align="right">
 						Lat: 
 					</td>
-					<td id="txtLat">						
+					<td id="lat_result">						
 					</td>
 
 				</tr>
@@ -72,48 +72,47 @@
 					<td align="right">
 						Lng: 
 					</td>
-					<td id="txtLng">
+					<td id="lng_result">
 					</td>
 
                     <tr>
 					<td align="right">
-						GeonameId: 
+						Geoname Id: 
 					</td>
-					<td id="txtGeonameId">
+					<td id="geonameid_result">
 					</td>
 
                                         <tr>
 					<td align="right">
 						Country Code: 
 					</td>
-					<td id="txtCountryCode">
+					<td id="countrycode_result">
 					</td>
                                         <tr>
 					<td align="right">
 						Country Name: 
 					</td>
-					<td id="txtCountryName">
+					<td id="countryname_result">
 					</td>
                                         <tr>
 					<td align="right">
-						Fcl: 
+						FCL: 
 					</td>
-					<td id="txtFcl">
+					<td id="fcl_result">
 					</td>
                                         <tr>
 					<td align="right">
-						Fcode: 
+						FCODE: 
 					</td>
-					<td id="txtFcode">
+					<td id="fcode_result">
 					</td>
 				</tr>
 			</table>
 
 		</div>
 
-		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
-		<script type="application/javascript" src="libs/js/script.js"></script>
-
+		<script src="/task/js/jquery-2.2.3.min.js"></script>
+		<script src="/task/js/script.js"></script>
 	</body>
 
 </html>
