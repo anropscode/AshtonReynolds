@@ -1,23 +1,24 @@
+$(document).ready(function() {
 $('#btnRun').click(function(){
     $.ajax({
-        url: "C:\\Users\\dottr\\OneDrive\\Documents\\AshtonsCodingFolders\\task\\geonamesExample\\libs\\php\\children.php",
+        url: "http://api.geonames.org/children?geonameId=3175395&username=anropscode",
         type: 'POST',
         dataType: 'json',
         data: {
-            'geonameId': $('#geonameId').val()
+            geonameid: $('#geonameselect').val()
         },
         success: function(result) {
             console.log(result);
             if(result.status.name === "ok") {
-                $('#txtToponymName').html(result['data'][0]['toponymName']);
-                $('#txtAreaname').html(result['data'][0]['areaname']);
-                $('#txtLat').html(result['data'][0]['lat']);
-                $('#txtLng').html(result['data'][0]['lng'])
-                $('#txtGeonameId').html(result['data'][0]['geonameId']);
-                $('#txtCountryCode').html(result['data'][0]['countryCode']);
-                $('#txtCountryName').html(result['data'][0]['countryName']);
-                $('#txtFcl').html(result['data'][0]['fcl']);
-                $('#txtFcode').html(result['data'][0]['fcode']);
+                $('#toponymname_result').html(result['data'][0]['toponymname']);
+                $('#name_result').html(result['data'][0]['name']);
+                $('#lat_result').html(result['data'][0]['lat']);
+                $('#lng_result').html(result['data'][0]['lng']);
+                $('#geonameid_result').html(result['data'][0]['geonameid']);
+                $('#countrycode_result').html(result['data'][0]['countrycode']);
+                $('#countryname_result').html(result['data'][0]['countryname']);
+                $('#fcl_result').html(result['data'][0]['fcl']);
+                $('#fcode').html(result['data'][0]['fcode']);
             }
         },
         error: function(jqxhr, status, error) {
@@ -25,4 +26,5 @@ $('#btnRun').click(function(){
             $('#error').html("Error fetching children data.");
         }
     });
+});
 });
