@@ -8,11 +8,11 @@ $.ajax({
     success: function(result) {
 
       if (result.status == "ok") {
-        $('#lat').html(result['lat']);
-        $('#countryId').html(result['countryId']);
+        $('#geonames').html(result['geonames']);
       }
     },
     error: function(jqxhr, status, error) {
       console.error("Error occurred:", status, error);
     }
 });
+
