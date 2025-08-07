@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 	<head>
 		<meta charset="utf-8">
 		<title>Country Children API</title>
@@ -8,111 +7,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Ashton Reynolds">
 	</head>
-
-	<body>
-
-		<select id="geonames_result">
-			<option value="3183560">3183560</option>
-			<option value="3164857">3164857</option>
-			<option value="3169778">3169778</option>
-			<option value="3182306">3182306</option>
-			<option value="2525468">2525468</option>
-			<option value="3181042">3181042</option>
-			<option value="3177401">3177401</option>			
-			<option value="3176525">3176525</option>
-			<option value="3174976">3174976</option>			
-			<option value="3174725">3174725</option>
-			<option value="3174618">3174618</option>
-			<option value="3173222">3173222</option>							
-			<option value="3170831">3170831</option>
-			<option value="2523228">2523228</option>
-			<option value="2523119">2523119</option>
-			<option value="3174004">3174004</option>
-			<option value="3165244">3165244</option>			
-			<option value="3165361">3165361</option>
-			<option value="3165048">3165048</option>			
-			<option value="3164604">3164604</option>
-		</select>
-
-		<button id="btnRun">Run</button>
-
-		<br><br>
-
-		<div id="divResults">
-			
-			<table>
-
-				<tr>
-					<td align="right">
-						Toponym Name: 
-					</td>
-					<td id="toponymname_result">	
-					</td>
-				</tr>
-
-				<tr>
-					<td align="right">
-						Name: 
-					</td>
-					<td id="name_result">						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Lat: 
-					</td>
-					<td id="lat_result">						
-					</td>
-
-				</tr>
-
-				<tr>
-					<td align="right">
-						Lng: 
-					</td>
-					<td id="lng_result">
-					</td>
-
-                    <tr>
-					<td align="right">
-						Geoname Id: 
-					</td>
-					<td id="geonameid_result">
-					</td>
-
-                                        <tr>
-					<td align="right">
-						Country Code: 
-					</td>
-					<td id="countrycode_result">
-					</td>
-                                        <tr>
-					<td align="right">
-						Country Name: 
-					</td>
-					<td id="countryname_result">
-					</td>
-                                        <tr>
-					<td align="right">
-						FCL: 
-					</td>
-					<td id="fcl_result">
-					</td>
-                                        <tr>
-					<td align="right">
-						FCODE: 
-					</td>
-					<td id="fcode_result">
-					</td>
-				</tr>
-			</table>
-
-		</div>
-
-		<script src="/task/js/jquery-2.2.3.min.js"></script>
-		<script src="/task/js/script.js"></script>
-	</body>
-
+<body>
+  <table>
+    <tr>
+      <th>API Name</th>
+      <th>API Description</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Long/Lat</td>
+      <td>
+        <p id="tabledescriptions">Description</p>
+        <p>The longtitute and country ID of a geoname.</p>
+        <label for="geonames">Enter the Geoname ID: </label>
+        <input type="text" id="geonames" name="geonames">
+      </td>
+      <td><button id="buttonrun1">Submit</button></td>
+    </tr>
+    <tr>
+      <td>Other API</td>
+      <td>Description</td>
+      <td><button id="buttonrun2">Submit</button></td>
+    </tr>
+    <tr>
+      <td>Other API</td>
+      <td>Description</td>
+      <td><button id="buttonrun3">Submit</button></td>
+    </tr>
+    <tr>
+      <td>
+        <p id="tabledescriptions">Result of API Call</p>
+      </td>
+      <p id="lat"></p>
+      <br><br>
+      <p id="countryId"></p>
+      <br><br>
+      </td>
+    </tr>
+  </table>
+  <script type="application/javascript" src="libs\js\jquery-2.2.3.min.js"></script>
+  <script type="application/javascript" src="libs\js\script.js"></script>
+</body>
 </html>
