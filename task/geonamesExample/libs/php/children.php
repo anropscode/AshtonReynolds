@@ -4,27 +4,64 @@
     
     $executionStartTime = microtime(true);
 
-    $url = "http://api.geonames.org/childrenJSON?geonameId=3175395&username=anropscode";
+    // Ensure geonames parameter exists
+    if (!isset($_REQUEST['geonames']) || empty($_REQUEST['geonames'])) {
+        $output['status']['code'] = "400";
+        $output['status']['name'] = "error";
+        $output['status']['description'] = "Missing geoname ID parameter";
+        
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode($output);
+        exit;
+    }
+
+    // URL for children
+    $url = "http://api.geonames.org/childrenJSON?geonameId=" . $_REQUEST['geonames'] . "&username=anropscode";
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL,$url);
 
-    $result=curl_exec($ch);
-
+    $result = curl_exec($ch);
+    
+    // Check for cURL errors
+    if ($result === false) {
+        $output['status']['code'] = "500";
+        $output['status']['name'] = "error";
+        $output['status']['description'] = "cURL Error: " . curl_error($ch);
+        
+        header('Content-Type: application/json; charset=UTF-8');
+        curl_close($ch);
+        echo json_encode($output);
+        exit;
+    }
+    
     curl_close($ch);
-
-    $decode = json_decode($result,true);    
-
-    $output['status']['code'] = "200";
-    $output['status']['name'] = "ok";
-    $output['status']['description'] = "success";
+    
+    $decode = json_decode($result, true);
+    
+    // Add debugging information
+    $output['debug'] = [
+        'raw_response' => $result,
+        'url' => $url
+    ];
+    
+    // Check if response contains error
+    if (isset($decode['status']) && isset($decode['status']['message'])) {
+        $output['status']['code'] = "400";
+        $output['status']['name'] = "error";
+        $output['status']['description'] = "API Error: " . $decode['status']['message'];
+        $output['data'] = $decode;
+    } else {
+        $output['status']['code'] = "200";
+        $output['status']['name'] = "ok";
+        $output['status']['description'] = "success";
+        $output['data'] = $decode;
+    }
+    
     $output['status']['returnedIn'] = intval((microtime(true)-$executionStartTime) * 1000) . " ms";
-    $output['data'] = $decode;
     
     header('Content-Type: application/json; charset=UTF-8');
-
     echo json_encode($output);
-
 ?>
