@@ -1,45 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Country Information API</title>
+  <link rel="stylesheet" type="text/css" href="libs/css/style.css">
+
 <body>
-  <table>
+<table>
+  <!-- Section for buttonrun1 -->
+  <tr>
+    <td>Geoname Info</td>
+    <td>
+      <p id="tabledescriptions">Description</p>
+      <p>Get geoname information by ID.</p>
+      <label for="geonameId">Enter the Geoname ID: </label>
+      <input type="text" id="geonameId" name="geonameId">
+    </td>
+    <td>
+      <button id="buttonrun1">Submit</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div id="lat"></div>
+      <div id="lng"></div>
+    </td>
+  </tr>
+
+  <!-- Section for buttonrun2 -->
+  <tr>
+    <td>Country Info</td>
+    <td>
+      <p id="tabledescriptions">Description</p>
+      <p>Get country information by code.</p>
+      <label for="countryCode">Enter the Country Code: </label>
+      <input type="text" id="countryCode" name="countryCode">
+    </td>
+    <td>
+      <button id="buttonrun2">Submit</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div id="population"></div>
+      <div id="currencyCode"></div>
+    </td>
+  </tr>
+
+  <!-- Section for buttonrun3 -->
+  <tr>
+    <td>General Country Info</td>
+    <td>
+      <p id="tabledescriptions">Description</p>
+      <p>Get general country information by code.</p>
+      <label for="generalCountryCode">Enter the Country Code: </label>
+      <input type="text" id="generalCountryCode" name="generalCountryCode">
+    </td>
+    <td>
+      <button id="buttonrun3">Submit</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div id="results"></div>
+    </td>
+  </tr>
     <tr>
-      <th>API Name</th>
-      <th>API Description</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>GeonameId Info API</td>
-      <td>
-        <p id="tabledescriptions">Description</p>
-        <p>GeonameId data.</p>
-        <label for="input_geonames">Enter the Geoname ID: </label>
-        <input type="text" id="input_geonames" name="inputforgeonames">
-      </td>
-      <td><button id="buttonrun1">Submit</button></td>
-    </tr>
-    <tr>
-      <td>Other API</td>
-      <td>Description</td>
-      <td><button id="buttonrun2">Submit</button></td>
-    </tr>
-    <tr>
-      <td>Other API</td>
-      <td>Description</td>
-      <td><button id="buttonrun3">Submit</button></td>
-    </tr>
-    <tr>
-      <td>
-        <p id="tabledescriptions">Result of API Call</p>
-      </td>
-      <p id="geonames"></p>
-      <br><br>
-      </td>
-    </tr>
-  </table>
+    <td colspan="3">
+      <div id="results"></div>
+    </td>
+  </tr>
+</table>
   <script type="application/javascript" src="libs\js\jquery-2.2.3.min.js"></script>
   <script type="application/javascript" src="libs\js\script.js"></script>
 </body>
 </html>
-
-
-
