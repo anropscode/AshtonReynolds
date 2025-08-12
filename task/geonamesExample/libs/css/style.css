@@ -1,11 +1,11 @@
 table, td {
   border: 1px solid;
   border-collapse: collapse;
+  text-align: center;
 }
 
-td, th {
-  font-weight: bold;
-  text-align: center;
+th {
+  background-color: aquamarine;
 }
 table {
   margin-left: auto;
