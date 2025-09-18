@@ -235,6 +235,9 @@ function addEventListeners() {
 }
 
 function loadCountryData(countryCode) {
+    // Clear existing markers and layers
+    clearAllMarkers();
+
     // Get country border
     $.ajax({
         url: 'libs/php/getCountryBorder.php',
@@ -275,7 +278,7 @@ function displayCountryBorder(country) {
 
 function loadCountryMarkers(countryName) {
     // Clear existing markers
-    clearMarkers();
+    clearAllMarkers();
 
     // Load different types of features
     var featureTypes = [
@@ -317,11 +320,14 @@ function addMarkersToLayer(features, layer, icon) {
     });
 }
 
-function clearMarkers() {
-    currentMarkers.forEach(function(marker) {
-        map.removeLayer(marker);
-    });
-    currentMarkers = [];
+function clearAllMarkers() {
+    airportsLayer.clearLayers();
+    citiesLayer.clearLayers();
+    universitiesLayer.clearLayers();
+    stadiumsLayer.clearLayers();
+    if (markerClusterGroup) {
+        markerClusterGroup.clearLayers();
+    }
 }
 
 function centerMapOnCountry(country) {
